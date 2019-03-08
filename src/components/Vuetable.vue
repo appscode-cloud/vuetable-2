@@ -73,7 +73,7 @@
       <tbody v-cloak class="vuetable-body">
         <template v-for="(item, itemIndex) in tableData">
           <tr 
-            :key="itemIndex"
+            :key="itemIndex + '-' + Date.now()"
             :item-index="itemIndex" 
             :render="onRowChanged(item)" 
             :class="onRowClass(item, itemIndex)"
@@ -214,7 +214,7 @@
   <tbody v-cloak class="vuetable-body">
     <template v-for="(item, itemIndex) in tableData">
       <tr @dblclick="onRowDoubleClicked(item, $event)" 
-        :key="itemIndex"
+        :key="itemIndex + '-' + Date.now()"
         :item-index="itemIndex" 
         :render="onRowChanged(item)" 
         :class="onRowClass(item, itemIndex)"
